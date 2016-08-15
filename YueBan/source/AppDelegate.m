@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "YBTabBarController.h"
-#import "YBMainViewController.h"
+//#import "YBMainViewController.h"
+#import "YBLoginController.h"
 #import "YBNavController.h"
 
 @interface AppDelegate ()
@@ -20,7 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [YBTabBarController tabBarControllerWithTitleArray:@[@"我要当DJ"] andNormalImages:@[@"tabBar_essence_icon"] andSelectedImages:@[@"tabBar_essence_click_icon"] andClassName:@[[YBMainViewController class]] withNavigation:[YBNavController class]];
+    self.window.rootViewController = [YBTabBarController tabBarControllerWithTitleArray:@[@"我要当DJ"] andNormalImages:@[@"tabBar_essence_icon"] andSelectedImages:@[@"tabBar_essence_click_icon"] andClassName:@[[YBLoginController class]] withNavigation:[YBNavController class]];
     [self.window makeKeyAndVisible];
     [self configreAppearance];
     // Override point for customization after application launch.
