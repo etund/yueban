@@ -8,6 +8,10 @@
 
 #import "YBLoginController.h"
 #import "Masonry.h"
+#include "sdkdef.h"
+#import "YBDevice.h"
+#import "sdkCall.h"
+#import "YueBanMainViewController.h"
 
 @interface YBLoginController ()
 
@@ -19,9 +23,13 @@
     [super viewDidLoad];
     [self setUp];
     [self setUpView];
+    
 }
 
 - (void)setUp{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSuccessed) name:kLoginSuccessed object:[sdkCall getinstance]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginFailed) name:kLoginFailed object:[sdkCall getinstance]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginCancelled) name:kLoginCancelled object:[sdkCall getinstance]];
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
@@ -32,11 +40,12 @@
     __weak typeof(self) weakSelf = self;
     [topV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.offset(0);
-        make.height.equalTo(weakSelf.view.mas_height).multipliedBy(2/5);
+        make.height.equalTo(weakSelf.view.mas_height).multipliedBy(0.4);
     }];
     
     UIImageView *iconImage = [[UIImageView alloc] init];
-    iconImage.backgroundColor = [UIColor greenColor];
+    iconImage.image = [UIImage imageNamed:@"icon"];
+    iconImage.backgroundColor = [UIColor clearColor];
     [topV addSubview:iconImage];
 #pragma mark - TODO 图片
     
@@ -61,7 +70,7 @@
         make.top.offset(150);
     }];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(iconImage.mas_bottom).multipliedBy(1.08);
+        make.top.equalTo(iconImage.mas_bottom).multipliedBy(1.05);
         make.centerX.equalTo(iconImage.mas_centerX);
     }];
     
@@ -74,37 +83,77 @@
         make.left.right.bottom.offset(0);
         make.height.equalTo(topV);
     }];
-    UIButton *loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    loginBtn.backgroundColor = [UIColor redColor];
-    loginBtn.layer.cornerRadius = 10;
+    UIButton *loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [loginBtn setImage:[UIImage imageNamed:@"login"] forState:UIControlStateNormal];
+    [loginBtn setImage:[UIImage imageNamed:@"login"] forState:UIControlStateHighlighted];
+    
+    loginBtn.backgroundColor = [UIColor clearColor];
+    loginBtn.layer.cornerRadius = 20;
     loginBtn.layer.masksToBounds = YES;
     [loginBtn addTarget:self action:@selector(loginClick) forControlEvents:UIControlEventTouchUpInside];
     [bottomV addSubview:loginBtn];
 #pragma  mark - TODO 背景色 图片
  
     UIImageView *bottomImage = [[UIImageView alloc] init];
-    bottomImage.backgroundColor = [UIColor yellowColor];
+    bottomImage.backgroundColor = [UIColor clearColor];
+    bottomImage.image = [UIImage imageNamed:@"bottom"];
     [bottomV addSubview:bottomImage];
 #pragma  mark - TODO 图片
     
     [loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.offset(0);
-        make.top.offset(0);
-        make.height.equalTo(@20);
-        make.width.equalTo(@80);
+        make.top.offset(30);
+        make.height.equalTo(@40);
+        make.width.equalTo(@150);
 #pragma  MARK - TODO 大小
     }];
     
     [bottomImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.offset(0);
-        make.height.equalTo(@80);
+        make.left.right.offset(0);
+        make.bottom.offset(0);
+        make.height.equalTo(@187);
     }];
 }
 
 #pragma  mark - Event
 - (void)loginClick{
+    NSArray* permissions = [NSArray arrayWithObjects:
+                            kOPEN_PERMISSION_GET_USER_INFO,
+                            kOPEN_PERMISSION_GET_SIMPLE_USER_INFO,
+                            kOPEN_PERMISSION_ADD_ALBUM,
+                            kOPEN_PERMISSION_ADD_ONE_BLOG,
+                            kOPEN_PERMISSION_ADD_SHARE,
+                            kOPEN_PERMISSION_ADD_TOPIC,
+                            kOPEN_PERMISSION_CHECK_PAGE_FANS,
+                            kOPEN_PERMISSION_GET_INFO,
+                            kOPEN_PERMISSION_GET_OTHER_INFO,
+                            kOPEN_PERMISSION_LIST_ALBUM,
+                            kOPEN_PERMISSION_UPLOAD_PIC,
+                            kOPEN_PERMISSION_GET_VIP_INFO,
+                            kOPEN_PERMISSION_GET_VIP_RICH_INFO,
+                            nil];
     
+    [[[sdkCall getinstance] oauth] authorize:permissions inSafari:NO];
+    NSLog(@"%@", [YBDevice sharedDevice].uuid);
+}
+
+- (void)loginSuccessed{
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[[YueBanMainViewController alloc] init]];
+    [self presentViewController:navController animated:YES completion:nil];
+}
+
+- (void)loginFailed{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"结果" message:@"登录失败" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil];
+    [alertView show];}
+- (void)loginCancelled{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"结果" message:@"登录取消" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil];
+    [alertView show];
+}
+
+#pragma mark - 销毁
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
