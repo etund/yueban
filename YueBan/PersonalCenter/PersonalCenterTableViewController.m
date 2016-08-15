@@ -18,6 +18,7 @@ static NSString *g_reuseIndetifier = @"personalCenterTableViewCell";
 @implementation PersonalCenterTableViewController
 
 @synthesize personalCenterHeadView;
+@synthesize bubbleLists;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +34,8 @@ static NSString *g_reuseIndetifier = @"personalCenterTableViewCell";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSString *path=[[NSBundle mainBundle]pathForResource:@"bubbleLists" ofType:@"plist"];
+    bubbleLists = [NSArray arrayWithContentsOfFile:path];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,8 +69,12 @@ static NSString *g_reuseIndetifier = @"personalCenterTableViewCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     PersonalCenterBubbleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:g_reuseIndetifier forIndexPath:indexPath];
-    [cell setCellText:@"开心的心情" tailImage:[UIImage imageNamed:@"play"]];
-    // Configure the cell...
+    if(indexPath.section == 1){
+        [cell setCellText:bubbleLists[0] tailImage:[UIImage imageNamed:@"play"]];
+    }else{
+         [cell setCellText:bubbleLists[indexPath.row + 1] tailImage:[UIImage imageNamed:@"play"]];
+    }
+   
     
     return cell;
 }

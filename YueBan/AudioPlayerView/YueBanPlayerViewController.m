@@ -70,7 +70,7 @@
 //    playListsButton.frame = CGRectMake(width-DJHEADICON_SIZE,DJHEADICON_SIZE/4,DJHEADICON_SIZE/2,DJHEADICON_SIZE/2);
 //    [playListsButton setBackgroundImage:[UIImage imageNamed:@"playlists"] forState:UIControlStateNormal];
     
-    closeButton.frame = CGRectMake(width-DJHEADICON_SIZE/2,DJHEADICON_SIZE/4,DJHEADICON_SIZE/2,DJHEADICON_SIZE/2);
+    closeButton.frame = CGRectMake(width-DJHEADICON_SIZE/2-10,DJHEADICON_SIZE/4,DJHEADICON_SIZE/2,DJHEADICON_SIZE/2);
     [closeButton setBackgroundImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
     
     mainBackgroundImageView.frame = CGRectMake(0

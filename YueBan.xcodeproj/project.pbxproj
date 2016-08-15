@@ -13,6 +13,7 @@
 		018B35C11D6212AB004CBEDE /* 萧亚轩 - 突然想起你.png in Resources */ = {isa = PBXBuildFile; fileRef = 018B35BB1D6212AB004CBEDE /* 萧亚轩 - 突然想起你.png */; };
 		018B35C21D6212AB004CBEDE /* 小沈阳 - 花房姑娘 (Live).png in Resources */ = {isa = PBXBuildFile; fileRef = 018B35BC1D6212AB004CBEDE /* 小沈阳 - 花房姑娘 (Live).png */; };
 		018B35C31D6212AB004CBEDE /* 庄心妍 - 走着走着就散了.png in Resources */ = {isa = PBXBuildFile; fileRef = 018B35BD1D6212AB004CBEDE /* 庄心妍 - 走着走着就散了.png */; };
+		018B35C51D622E65004CBEDE /* bubbleLists.plist in Resources */ = {isa = PBXBuildFile; fileRef = 018B35C41D622E65004CBEDE /* bubbleLists.plist */; };
 		8021D7F41D5AFFA100FCE099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8021D7F31D5AFFA100FCE099 /* Assets.xcassets */; };
 		8021D80A1D5B026E00FCE099 /* YBNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8021D8041D5B026E00FCE099 /* YBNavController.m */; };
 		8021D80B1D5B026E00FCE099 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8021D8081D5B026E00FCE099 /* AppDelegate.m */; };
@@ -80,6 +81,7 @@
 		018B35BB1D6212AB004CBEDE /* 萧亚轩 - 突然想起你.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "萧亚轩 - 突然想起你.png"; sourceTree = "<group>"; };
 		018B35BC1D6212AB004CBEDE /* 小沈阳 - 花房姑娘 (Live).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小沈阳 - 花房姑娘 (Live).png"; sourceTree = "<group>"; };
 		018B35BD1D6212AB004CBEDE /* 庄心妍 - 走着走着就散了.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "庄心妍 - 走着走着就散了.png"; sourceTree = "<group>"; };
+		018B35C41D622E65004CBEDE /* bubbleLists.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bubbleLists.plist; sourceTree = "<group>"; };
 		8021D7E41D5AFFA100FCE099 /* YueBan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YueBan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8021D7F31D5AFFA100FCE099 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		8021D7F81D5AFFA100FCE099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -473,6 +475,7 @@
 				80CD97461D61FB4E0043B2FC /* PersonalCenterHeadView.m */,
 				80CD97471D61FB4E0043B2FC /* PersonalCenterTableViewController.h */,
 				80CD97481D61FB4E0043B2FC /* PersonalCenterTableViewController.m */,
+				018B35C41D622E65004CBEDE /* bubbleLists.plist */,
 			);
 			path = PersonalCenter;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				80CD97291D61FB3F0043B2FC /* Line.png in Resources */,
 				80CD972C1D61FB3F0043B2FC /* return.png in Resources */,
 				80CD97311D61FB3F0043B2FC /* usericon.png in Resources */,
+				018B35C51D622E65004CBEDE /* bubbleLists.plist in Resources */,
 				80CD97301D61FB3F0043B2FC /* statusbar0.png in Resources */,
 				80CD97241D61FB3F0043B2FC /* dislike.png in Resources */,
 				80CD971B1D61FB3F0043B2FC /* bubble1.png in Resources */,

@@ -12,5 +12,6 @@
 @interface PersonalCenterTableViewController : UITableViewController
 
 @property (nonatomic,strong)PersonalCenterHeadView *personalCenterHeadView;
+@property (nonatomic,strong)NSArray *bubbleLists;
 
 @end
