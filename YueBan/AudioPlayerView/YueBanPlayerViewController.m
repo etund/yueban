@@ -13,7 +13,7 @@
 
 @synthesize DJHeadIconImageView;
 @synthesize DJNameAndSignatureLabel;
-@synthesize playListsButton;
+//@synthesize playListsButton;
 @synthesize closeButton;
 @synthesize mainBackgroundImageView;
 //@synthesize currentListeners[7];
@@ -35,9 +35,9 @@
     DJNameAndSignatureLabel = [[UILabel alloc] init];
     [self.view addSubview:DJNameAndSignatureLabel];
     
-    playListsButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.view addSubview:playListsButton];
-    [playListsButton addTarget:self action:@selector(onPlaylistButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+//    playListsButton = [UIButton buttonWithType:UIButtonTypeSystem];
+//    [self.view addSubview:playListsButton];
+//    [playListsButton addTarget:self action:@selector(onPlaylistButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     
     closeButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.view addSubview:closeButton];
@@ -58,8 +58,8 @@
     CGFloat width = self.view.bounds.size.width;
     CGFloat height = self.view.bounds.size.height;
     
-    DJHeadIconImageView.frame = CGRectMake(0,0,DJHEADICON_SIZE,DJHEADICON_SIZE);
-    DJHeadIconImageView.layer.cornerRadius = DJHEADICON_SIZE / 2;
+    DJHeadIconImageView.frame = CGRectMake(0.1*DJHEADICON_SIZE,0.1*DJHEADICON_SIZE,0.8*DJHEADICON_SIZE,0.8*DJHEADICON_SIZE);
+    DJHeadIconImageView.layer.cornerRadius = DJHeadIconImageView.frame.size.width / 2;
     DJHeadIconImageView.clipsToBounds = YES;
     [self setDJHeadIcon:[UIImage imageNamed:@"usericon"]];
     
@@ -67,8 +67,8 @@
     DJNameAndSignatureLabel.numberOfLines = 0;
     [self setDJNameAndSignature:@"乐伴" signature:@"大家好，我是乐小伴!"];
     
-    playListsButton.frame = CGRectMake(width-DJHEADICON_SIZE,DJHEADICON_SIZE/4,DJHEADICON_SIZE/2,DJHEADICON_SIZE/2);
-    [playListsButton setBackgroundImage:[UIImage imageNamed:@"playlists"] forState:UIControlStateNormal];
+//    playListsButton.frame = CGRectMake(width-DJHEADICON_SIZE,DJHEADICON_SIZE/4,DJHEADICON_SIZE/2,DJHEADICON_SIZE/2);
+//    [playListsButton setBackgroundImage:[UIImage imageNamed:@"playlists"] forState:UIControlStateNormal];
     
     closeButton.frame = CGRectMake(width-DJHEADICON_SIZE/2,DJHEADICON_SIZE/4,DJHEADICON_SIZE/2,DJHEADICON_SIZE/2);
     [closeButton setBackgroundImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
@@ -91,7 +91,7 @@
     CGFloat oriFrameSize = self.statusBarView.frame.size.height;
     self.statusBarView.frame = CGRectMake(0,height-navBarSize-systemStatusBarSize-oriFrameSize,width,oriFrameSize);
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    
+     
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onEnterPersonalCenterView)];
     self.DJHeadIconImageView.userInteractionEnabled = YES;
     [self.DJHeadIconImageView addGestureRecognizer:tapRecognizer];
@@ -125,8 +125,8 @@
     NSString *tmpString = [NSString stringWithFormat:@"%@\n%@",name,signature];
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:tmpString];
     
-    [text addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,name.length)];
-    [text addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:20] range:NSMakeRange(0,name.length)];
+    [text addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0,name.length)];
+    [text addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0,name.length)];
     
     [text addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(name.length+1,signature.length)];
     [text addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:10] range:NSMakeRange(name.length+1,signature.length)];
@@ -160,10 +160,10 @@
     [self.mainViewController performSelector:@selector(stopPlayer) withObject:self.mainViewController];
 }
 
-- (void)onPlaylistButtonAction:(id)sender
+/*- (void)onPlaylistButtonAction:(id)sender
 {
     NSLog(@"显示个人中心");
-}
+}*/
 
 -(void)onEnterPersonalCenterView
 {

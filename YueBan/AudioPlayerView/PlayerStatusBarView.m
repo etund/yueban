@@ -17,7 +17,7 @@
 {
     if(self =  [super initWithFrame:frame]){
         //[self setBackgroundColor:[UIColor colorWithRed:214/255.0f green:32/255.0f blue:75/255.0f alpha:0.2f]];
-        [self setBackgroundColor:[UIColor clearColor]];
+        [self setBackgroundColor:[UIColor whiteColor]];
         
         _timeLabel = [[UILabel alloc] init];
         [self addSubview:_timeLabel];
@@ -45,21 +45,22 @@
         CGFloat width = self.bounds.size.width;
         CGFloat height = self.bounds.size.height;
         
-        _songCoverImageView.frame = CGRectMake(0,0, SONGCOVER_SIZE, SONGCOVER_SIZE);
+        _songCoverImageView.frame = CGRectMake(0.1*SONGCOVER_SIZE,0.1*SONGCOVER_SIZE, 0.8*SONGCOVER_SIZE, 0.8*SONGCOVER_SIZE);
         
-        _songAndSingerLabel.frame = CGRectMake(SONGCOVER_SIZE,0,width-3*SONGCOVER_SIZE,SONGCOVER_SIZE - PROGRESSSLIDER_SIZE);
+        _songAndSingerLabel.frame = CGRectMake(SONGCOVER_SIZE,5,width-3*SONGCOVER_SIZE,SONGCOVER_SIZE - PROGRESSSLIDER_SIZE);
         _songAndSingerLabel.numberOfLines = 0;
         
-        _likeButton.frame = CGRectMake(width-SONGCOVER_SIZE, 0, SONGCOVER_SIZE/2, SONGCOVER_SIZE/2);
+        _likeButton.frame = CGRectMake(width-SONGCOVER_SIZE, 8, SONGCOVER_SIZE/2, SONGCOVER_SIZE/2);
         [_likeButton setBackgroundImage:[UIImage imageNamed:@"like"] forState:UIControlStateNormal];
         
-        _dislikeButton.frame = CGRectMake(width-SONGCOVER_SIZE/2, 0, SONGCOVER_SIZE/2, SONGCOVER_SIZE/2);
+        _dislikeButton.frame = CGRectMake(width-SONGCOVER_SIZE/2, 8, SONGCOVER_SIZE/2, SONGCOVER_SIZE/2);
         [_dislikeButton setBackgroundImage:[UIImage imageNamed:@"dislike"] forState:UIControlStateNormal];
         
         _timeLabel.frame = CGRectMake(SONGCOVER_SIZE, height - PROGRESSSLIDER_SIZE, 50, PROGRESSSLIDER_SIZE);
+        [_timeLabel setFont:[UIFont systemFontOfSize:14]];
         
         _durationLabel.frame = CGRectMake(width-50, height - PROGRESSSLIDER_SIZE, 50, PROGRESSSLIDER_SIZE);
-        
+        [_durationLabel setFont:[UIFont systemFontOfSize:14]];
         
         _progressSlider.frame = CGRectMake(SONGCOVER_SIZE + 50,height - PROGRESSSLIDER_SIZE, width-2*50-SONGCOVER_SIZE, PROGRESSSLIDER_SIZE);
         [_progressSlider setThumbImage:[UIImage imageNamed:@"slider"] forState:UIControlStateNormal];
@@ -95,7 +96,7 @@
     NSString *tmpString = [NSString stringWithFormat:@"%@\n%@",song,singer];
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:tmpString];
     
-    [text addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:20] range:NSMakeRange(0,song.length)];
+    [text addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14] range:NSMakeRange(0,song.length)];
     
     [text addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(song.length+1,singer.length)];
     [text addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:10] range:NSMakeRange(song.length+1,singer.length)];

@@ -22,10 +22,11 @@ static NSString *g_reuseIndetifier = @"personalCenterTableViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerClass:[PersonalCenterBubbleTableViewCell class] forCellReuseIdentifier:g_reuseIndetifier];
+    self.tableView.separatorStyle = NO;
     
     personalCenterHeadView = [[PersonalCenterHeadView alloc] initWithFrame:CGRectMake(0,0, self.view.frame.size.width, self.view.frame.size.height/3)];
     [self.tableView setTableHeaderView:personalCenterHeadView];
-    [personalCenterHeadView setUserIcon:[UIImage imageNamed:@"songcover"] userName:@"御龙吟" fansNumber:2324234];
+    [personalCenterHeadView setUserIcon:[UIImage imageNamed:@"贺敬轩 - 我决定不爱了 (《我的六次元男友》电影主题曲)"] userName:@"乐伴" fansNumber:2324234];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

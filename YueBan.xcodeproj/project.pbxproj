@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		018B35BE1D6212AB004CBEDE /* 安以轩 - 如果那天没有遇见你.png in Resources */ = {isa = PBXBuildFile; fileRef = 018B35B81D6212AB004CBEDE /* 安以轩 - 如果那天没有遇见你.png */; };
+		018B35BF1D6212AB004CBEDE /* 陈楚生 - 爱过 (《非诚勿扰2》电影插曲).png in Resources */ = {isa = PBXBuildFile; fileRef = 018B35B91D6212AB004CBEDE /* 陈楚生 - 爱过 (《非诚勿扰2》电影插曲).png */; };
+		018B35C01D6212AB004CBEDE /* 贺敬轩 - 我决定不爱了 (《我的六次元男友》电影主题曲).png in Resources */ = {isa = PBXBuildFile; fileRef = 018B35BA1D6212AB004CBEDE /* 贺敬轩 - 我决定不爱了 (《我的六次元男友》电影主题曲).png */; };
+		018B35C11D6212AB004CBEDE /* 萧亚轩 - 突然想起你.png in Resources */ = {isa = PBXBuildFile; fileRef = 018B35BB1D6212AB004CBEDE /* 萧亚轩 - 突然想起你.png */; };
+		018B35C21D6212AB004CBEDE /* 小沈阳 - 花房姑娘 (Live).png in Resources */ = {isa = PBXBuildFile; fileRef = 018B35BC1D6212AB004CBEDE /* 小沈阳 - 花房姑娘 (Live).png */; };
+		018B35C31D6212AB004CBEDE /* 庄心妍 - 走着走着就散了.png in Resources */ = {isa = PBXBuildFile; fileRef = 018B35BD1D6212AB004CBEDE /* 庄心妍 - 走着走着就散了.png */; };
 		8021D7F41D5AFFA100FCE099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8021D7F31D5AFFA100FCE099 /* Assets.xcassets */; };
 		8021D80A1D5B026E00FCE099 /* YBNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8021D8041D5B026E00FCE099 /* YBNavController.m */; };
 		8021D80B1D5B026E00FCE099 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8021D8081D5B026E00FCE099 /* AppDelegate.m */; };
@@ -68,6 +74,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		018B35B81D6212AB004CBEDE /* 安以轩 - 如果那天没有遇见你.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "安以轩 - 如果那天没有遇见你.png"; sourceTree = "<group>"; };
+		018B35B91D6212AB004CBEDE /* 陈楚生 - 爱过 (《非诚勿扰2》电影插曲).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "陈楚生 - 爱过 (《非诚勿扰2》电影插曲).png"; sourceTree = "<group>"; };
+		018B35BA1D6212AB004CBEDE /* 贺敬轩 - 我决定不爱了 (《我的六次元男友》电影主题曲).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "贺敬轩 - 我决定不爱了 (《我的六次元男友》电影主题曲).png"; sourceTree = "<group>"; };
+		018B35BB1D6212AB004CBEDE /* 萧亚轩 - 突然想起你.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "萧亚轩 - 突然想起你.png"; sourceTree = "<group>"; };
+		018B35BC1D6212AB004CBEDE /* 小沈阳 - 花房姑娘 (Live).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小沈阳 - 花房姑娘 (Live).png"; sourceTree = "<group>"; };
+		018B35BD1D6212AB004CBEDE /* 庄心妍 - 走着走着就散了.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "庄心妍 - 走着走着就散了.png"; sourceTree = "<group>"; };
 		8021D7E41D5AFFA100FCE099 /* YueBan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YueBan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8021D7F31D5AFFA100FCE099 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		8021D7F81D5AFFA100FCE099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -389,6 +401,12 @@
 		80CD96FF1D61FB3F0043B2FC /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				018B35B81D6212AB004CBEDE /* 安以轩 - 如果那天没有遇见你.png */,
+				018B35B91D6212AB004CBEDE /* 陈楚生 - 爱过 (《非诚勿扰2》电影插曲).png */,
+				018B35BA1D6212AB004CBEDE /* 贺敬轩 - 我决定不爱了 (《我的六次元男友》电影主题曲).png */,
+				018B35BB1D6212AB004CBEDE /* 萧亚轩 - 突然想起你.png */,
+				018B35BC1D6212AB004CBEDE /* 小沈阳 - 花房姑娘 (Live).png */,
+				018B35BD1D6212AB004CBEDE /* 庄心妍 - 走着走着就散了.png */,
 				80CD97001D61FB3F0043B2FC /* bkg.png */,
 				80CD97011D61FB3F0043B2FC /* bkg0.png */,
 				80CD97021D61FB3F0043B2FC /* bubble1.png */,
@@ -529,11 +547,13 @@
 				80CD972D1D61FB3F0043B2FC /* slider.png in Resources */,
 				80CD97191D61FB3F0043B2FC /* bkg.png in Resources */,
 				80CD97201D61FB3F0043B2FC /* buttonbkg.png in Resources */,
+				018B35C01D6212AB004CBEDE /* 贺敬轩 - 我决定不爱了 (《我的六次元男友》电影主题曲).png in Resources */,
 				8021D7F41D5AFFA100FCE099 /* Assets.xcassets in Resources */,
 				80CD972E1D61FB3F0043B2FC /* songcover.png in Resources */,
 				80CD97271D61FB3F0043B2FC /* forward.png in Resources */,
 				80CD971A1D61FB3F0043B2FC /* bkg0.png in Resources */,
 				80CD97251D61FB3F0043B2FC /* dropdown.png in Resources */,
+				018B35BF1D6212AB004CBEDE /* 陈楚生 - 爱过 (《非诚勿扰2》电影插曲).png in Resources */,
 				80CD97221D61FB3F0043B2FC /* defaultcover.png in Resources */,
 				80CD972F1D61FB3F0043B2FC /* statusbar.png in Resources */,
 				80CD972A1D61FB3F0043B2FC /* personalcenterbkg.png in Resources */,
@@ -546,12 +566,16 @@
 				80CD97241D61FB3F0043B2FC /* dislike.png in Resources */,
 				80CD971B1D61FB3F0043B2FC /* bubble1.png in Resources */,
 				80CD971D1D61FB3F0043B2FC /* bubble3.png in Resources */,
+				018B35BE1D6212AB004CBEDE /* 安以轩 - 如果那天没有遇见你.png in Resources */,
 				80CD97231D61FB3F0043B2FC /* defaulticon.png in Resources */,
 				80CD971E1D61FB3F0043B2FC /* bubble4.png in Resources */,
 				80CD97211D61FB3F0043B2FC /* close.png in Resources */,
+				018B35C21D6212AB004CBEDE /* 小沈阳 - 花房姑娘 (Live).png in Resources */,
+				018B35C11D6212AB004CBEDE /* 萧亚轩 - 突然想起你.png in Resources */,
 				80CD972B1D61FB3F0043B2FC /* playlists.png in Resources */,
 				80CD971F1D61FB3F0043B2FC /* bubble5.png in Resources */,
 				80CD97261D61FB3F0043B2FC /* dropdownbkg.png in Resources */,
+				018B35C31D6212AB004CBEDE /* 庄心妍 - 走着走着就散了.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,7 +714,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = YueBan/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.etund.YueBan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -707,7 +731,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = YueBan/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.etund.YueBan;
 				PRODUCT_NAME = "$(TARGET_NAME)";

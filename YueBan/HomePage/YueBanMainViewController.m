@@ -32,7 +32,8 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"statusbar"] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    
+    self.title = @"乐伴";
+
     [self initUserPortrait];
     [self initBubbles];
     [self initDropDownView];
@@ -48,7 +49,7 @@
     [userPortraitButton addTarget:self action:@selector(onUserPortraitButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:userPortraitButton];
     
-    [self setUserPortraitImage:[UIImage imageNamed:@"defaulticon"]];
+    [self setUserPortraitImage:[UIImage imageNamed:@"贺敬轩 - 我决定不爱了 (《我的六次元男友》电影主题曲)"]];
 }
 
 - (void)initBubbles
@@ -61,14 +62,15 @@
     [bubbleImageView1 setBubbleId:1];
     [bubbleImageView1 setBkgImage:[UIImage imageNamed:@"bubble1"]];
     [bubbleImageView1 setActionDelegate:self];
+    [self setBubbleAlbumImage:[UIImage imageNamed:@"安以轩 - 如果那天没有遇见你"] label:@"如果那天没有遇见你" withIndex:1];
     [self.view addSubview:bubbleImageView1];
-    
     
     CGFloat bubble2Size = 0.22*height;
     bubbleImageView2 = [[BubbleItemView alloc] initWithFrame:CGRectMake(width - bubble2Size - 2, bubble2Size/3, bubble2Size,bubble2Size)];
     [bubbleImageView2 setBkgImage:[UIImage imageNamed:@"bubble2"]];
     [bubbleImageView2 setBubbleId:2];
     [bubbleImageView2 setActionDelegate:self];
+     [self setBubbleAlbumImage:[UIImage imageNamed:@"陈楚生 - 爱过 (《非诚勿扰2》电影插曲)"] label:@"爱过" withIndex:2];
     [self.view addSubview:bubbleImageView2];
     
     CGFloat bubble3Size = 0.26*height;
@@ -76,6 +78,7 @@
     [bubbleImageView3 setBkgImage:[UIImage imageNamed:@"bubble3"]];
     [bubbleImageView3 setBubbleId:3];
     [bubbleImageView3 setActionDelegate:self];
+    [self setBubbleAlbumImage:[UIImage imageNamed:@"萧亚轩 - 突然想起你"] label:@"突然想起你" withIndex:3];
     [self.view addSubview:bubbleImageView3];
     
     CGFloat bubble4Size = 0.30*height;
@@ -83,6 +86,7 @@
     [bubbleImageView4 setBkgImage:[UIImage imageNamed:@"bubble4"]];
     [bubbleImageView4 setBubbleId:4];
     [bubbleImageView4 setActionDelegate:self];
+    [self setBubbleAlbumImage:[UIImage imageNamed:@"小沈阳 - 花房姑娘 (Live)"] label:@"花房姑娘" withIndex:4];
     [self.view addSubview:bubbleImageView4];
     
     CGFloat bubble5Size = 0.32*height;
@@ -90,13 +94,8 @@
     [bubbleImageView5 setBkgImage:[UIImage imageNamed:@"bubble5"]];
     [bubbleImageView5 setBubbleId:5];
     [bubbleImageView5 setActionDelegate:self];
+    [self setBubbleAlbumImage:[UIImage imageNamed:@"庄心妍 - 走着走着就散了"] label:@"走着走着就散了" withIndex:5];
     [self.view addSubview:bubbleImageView5];
-    
-    for(int i=1;i<=5;i++){
-        UIImage *albumImg = [UIImage imageNamed:@"songcover"];
-        NSString *albumText = [NSString stringWithFormat:@"歌单-%i",i];
-        [self setBubbleAlbumImage:albumImg label:albumText withIndex:i];
-    }
 }
 
 - (void)onUserPortraitButtonAction:(id)sender
@@ -125,13 +124,13 @@
             [self.audioPlayer stopPlayer];
             self.audioPlayer = nil;
         }
-        NSString *url0 = @"http://sc1.111ttt.com/2016/5/08/04/20104215600.mp3";
+        NSString *url0 = @"http://sc1.111ttt.com/2015/1/07/03/100032248505.mp3";
         NSString *url2 = @"http://sc1.111ttt.com/2016/1/08/05/201051713464.mp3";
         NSString *url1 = @"http://sc1.111ttt.com/2016/5/08/04/201042156070.mp3";
-        NSString *singer0 = @"111ttt";
+        NSString *singer0 = @"BIG BANG";
         NSString *singer1 = @"薛之谦";
         NSString *singer2 = @"天空";
-        NSString *song0 = @"111ttt";
+        NSString *song0 = @"BANG BANG BANG";
         NSString *song1 = @"方圆几里";
         NSString *song2 = @"天空之城";
         UIImage *img0 = [UIImage imageNamed:@"songcover"];
