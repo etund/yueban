@@ -34,7 +34,7 @@
         [bkgImageView setImage:[UIImage imageNamed:@"personalcenterbkg"]];
         [self addSubview:bkgImageView];
         
-        returnImageView = [[UIImageView alloc] initWithFrame:CGRectMake(5,5, 30, 30)];
+        returnImageView = [[UIImageView alloc] initWithFrame:CGRectMake(5,20, 30, 30)];
         [self addSubview:returnImageView];
         [returnImageView setImage:[UIImage imageNamed:@"return"]];
         returnImageView.userInteractionEnabled = YES;

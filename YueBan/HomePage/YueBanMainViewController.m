@@ -9,6 +9,9 @@
 #import "YueBanMainViewController.h"
 #import "YueBanPlayerViewController.h"
 #import "PersonalCenterTableViewController.h"
+#import "AddSongViewController.h"
+
+#import "YBDevice.h"
 
 
 @interface YueBanMainViewController ()
@@ -96,6 +99,30 @@
     [bubbleImageView5 setActionDelegate:self];
     [self setBubbleAlbumImage:[UIImage imageNamed:@"庄心妍 - 走着走着就散了"] label:@"走着走着就散了" withIndex:5];
     [self.view addSubview:bubbleImageView5];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recvNotification:) name:@"NOTIFICATION_CREATE_BUBBLE" object:nil];
+}
+
+- (void)recvNotification:(NSNotification *)notification
+{
+    NSDictionary *dic = notification.userInfo;
+    
+    self.songList = dic[@"info"];
+    
+    NSMutableArray *urlArrays;
+    UIImage *img = [UIImage imageNamed:@"songcover"];
+    for(int i=0;i<[self.songList count];i++)
+    {
+        NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:self.songList[i].songName,@"song",self.songList[i].singer,@"singer",self.songList[i].songURL,@"url",img,@"defaultcover",nil];
+        [urlArrays addObject:dict];
+    }
+    
+    [self.audioPlayer stopPlayer];
+    self.audioPlayer = nil;
+    self.audioPlayer = [[YueBanAudioPlayer alloc] init];
+    [self.audioPlayer setPlayLists:urlArrays withStatusBarView:self.playerStatusBarView];
+    [self.audioPlayer.audioPlayer play];
+    [self jumpToPlayerView];
 }
 
 - (void)onUserPortraitButtonAction:(id)sender
@@ -228,7 +255,15 @@
 {
     int motionValue = 1,envValue = 1,langValue = 1;
     [self.dropDownView getMotionValue:&motionValue envValue:&envValue langValue:&langValue];
+    
+    YBDevice *info = [YBDevice sharedDevice];
+    info.motionValue = motionValue;
+    info.envValue = envValue;
+    info.langValue = langValue;
+    
     NSLog(@"onCreateBubble:%i,%i,%i",motionValue,envValue,langValue);
+    AddSongViewController *vc = [[AddSongViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)onSearchBubble:(id)sender

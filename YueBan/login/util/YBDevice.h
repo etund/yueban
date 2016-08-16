@@ -31,12 +31,20 @@ _instance = [[self alloc] init];\
 return _instance;\
 }
 
-
 #import <Foundation/Foundation.h>
+
+#import "SongInfo.h"
 
 @interface YBDevice : NSObject
 
+
 @property (nonatomic, copy) NSString *uuid;
+
+@property (nonatomic, assign) int motionValue;
+@property (nonatomic) int envValue;
+@property (nonatomic) int langValue;
+
+@property (nonatomic, strong) NSArray<SongInfo *> *songList;
 
 signleton_h(Device)
 

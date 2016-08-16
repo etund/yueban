@@ -12,6 +12,8 @@
 #import "YueBanAudioPlayer.h"
 #import "BubbleItemView.h"
 
+#import "SongInfo.h"
+
 @interface YueBanMainViewController : UIViewController
 {
     int currentBubble;
@@ -27,6 +29,8 @@
 @property (nonatomic,strong)YueBanDropDownView *dropDownView;
 @property (nonatomic,strong)PlayerStatusBarView *playerStatusBarView;
 @property (nonatomic,strong)YueBanAudioPlayer *audioPlayer;
+
+@property (nonatomic, strong) NSArray<SongInfo *> *songList;
 
 @end
 
